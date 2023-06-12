@@ -25,15 +25,21 @@
       
     <!------------------------------------ To play the audio --------------------------------------->
 
-    
- 
+<audio autoplay>
+   <source src="Resources/Menu.mp3" type="audio/mp3">
+</audio>
+      
+      
     <div></div>
 <button id="MenuAudio">Sound On</button>
 <p>Turn on Audio for best experience</p>
-
+      
+      
 <script>
     window.onload = function() {
       let audio = new Audio("Resources/Menu.mp3");
+        
+        audio.play();
       
       function playMusic() {
           if (audio.paused) {
@@ -41,15 +47,20 @@
               audio.loop = true;
               // disable the button
               playButton.disabled = true;
-          } else {
+          } 
+
+          else {
               audio.currentTime = 0;
           }
       }
 
       let playButton = document.getElementById("MenuAudio");
       playButton.addEventListener("click", playMusic);
+        
     }
+
 </script>
+
     <!------------------------------------ To play the audio ---------------------------------------> 
     
         <video autoplay muted loop id="Menu Video" class="bg-video">

@@ -10,6 +10,7 @@ var currentFrame = 0;
 var key;
 var gravity = 1;
 var score = 0;
+var invincible;
 
 
 
@@ -38,17 +39,17 @@ function preload() {
 
 function setup(){
     
+    invincible = false;
     AirportAudio.play();
     AirportAudio.setVolume(0.5);
-
     
     
 //-------------------------CANVAS AND GAME TIME--------------------XX
-    createCanvas(1368,700);
+    createCanvas(1366 ,700);
     noFill();  
     bg_x2 = width;
     startTime = millis(); //timer that store the game elasped time
-	
+	 
 	
 //--------------------------CHARACTER POSITIONING------------------//
 
@@ -140,21 +141,21 @@ let seconds = int(elapsedTime / 1000);  // Convert to seconds        |
 if(seconds < 3) {
 stroke(0);
 strokeWeight(4);
-textFont("san serif");
+textFont("comic sans MS");
 textSize(30);
 fill(255,255,255);
-text("Get to the Aiport in time", 550,100);  //promt to get to the airport in time
+text("Get to the Aiport in time", 550,300);  //promt to get to the airport in time
     
 }
     
 //-------------------------------ELASPED TIME-------------------------------------------X
     
     else {
-        timeLeft = 190 - seconds;
+        timeLeft = 179 - seconds;
         fill(255,255,255);
         stroke(0);
         strokeWeight(4);
-        textFont("monospace");
+        textFont("comic sans MS");
         textSize(20);
         text("Gate closes in " + timeLeft, 1150, 50); // shows the time elsaped
     }
@@ -188,7 +189,7 @@ if(seconds > 600) {
     
 // Choose which frame to display based on the current frame count
 if (frameCount % 4 == 0) {  // Change image every 10 frames
-    currentFrame = (currentFrame + 1) % 3;  // Cycle through 3 frames
+    currentFrame = (currentFrame + 1) % 4;  // Cycle through 3 frames
     }
 
 
@@ -246,6 +247,7 @@ let obstacleGone = false;
     else if (seconds >= 60 && seconds < 80) {
         KetchupPos.x -= 8;
         BobaPos.x  -= 8;
+        BobaPos.y + sin(time) * 3;
         console.log("speed is 8");
 
     }
@@ -253,22 +255,105 @@ let obstacleGone = false;
     else if (seconds >= 80 && seconds < 100) {
         KetchupPos.x -= 12;
         BobaPos.x -= 8;
+        bg_x1 -= 3;
+        bg_x2 -= 3;
+        currentFrame = (currentFrame + 1) % 2;
         console.log("speed is 12");
         
     }
     
-    else if (seconds >= 100 && seconds < 120) {
+    else if (seconds >= 100 && seconds < 112) {
         KetchupPos.x -= 7;
         BobaPos.x -= 7;
-        console.log("speed is 12");
+        console.log("speed is 12"); 
+    }
+        
+    else if(seconds > 116 && seconds < 142) {
+        
+        KetchupPos.x -= 14;
+        BobaPos.x -= 10;
+        bg_x1 -= 4;
+        bg_x2 -=4;
+        currentFrame = (currentFrame + 1) % 2;
+        console.log("speed is 14");
         
     }
+    
+    else if(seconds > 142 && seconds <= 178) {
+        
+        KetchupPos.x -= 14;
+        BobaPos.x -= 14;
+        bg_x1 -= 6;
+        bg_x2 -=6;
+        currentFrame = (currentFrame + 1) % 2;
+        console.log("speed is 14"); 
+    }
+        
+        
     
     else {
         KetchupPos.x -= 6;
         BobaPos.x -= 6;
         console.log("speed is 6 stage 1 speed");
+
     }
+
+    if (seconds > 27 && seconds < 31) {
+        stroke(0);
+        strokeWeight(4);
+        textFont("comic sans MS");
+        textSize(30);
+        fill(255,255,255);
+        text("SPEED CHANGING ", 550,300);
+    }
+    
+    else if (seconds > 57 && seconds < 60) {
+        stroke(0);
+        strokeWeight(4);
+        textFont("comic sans MS");
+        textSize(30);
+        fill(255,255,255);
+        text("SPEED CHANGING ", 550,300);
+    }
+    
+    else if (seconds > 77 && seconds < 80) {
+        stroke(0);
+        strokeWeight(4);
+        textFont("comic sans MS");
+        textSize(30);
+        fill(255,255,255);
+        text("SPEED CHANGING ", 550,300);
+    }
+    
+    else if (seconds >= 97 && seconds < 100) {
+        
+        stroke(0);
+        strokeWeight(4);
+        textFont("comic sans MS");
+        textSize(30);
+        fill(255,255,255);
+        text("SPEED CHANGING ", 550,300);
+        
+    }
+    
+    else if(seconds > 113 & seconds < 116) {
+        stroke(0);
+        strokeWeight(4);
+        textFont("comic sans MS");
+        textSize(30);
+        fill(255,255,255);
+        text("SPEED CHANGING ", 550,300);
+    }
+    
+    else if(seconds > 139 && seconds < 142) {
+        stroke(0);
+        strokeWeight(4);
+        textFont("comic sans MS");
+        textSize(30);
+        fill(255,255,255);
+        text("SPEED CHANGING ", 550,300);
+    }
+        
 
     
 //------------------------------------DISAPLY THE OBSTACLES-----------------X
@@ -305,13 +390,13 @@ if(BobaPos.x < 1) {
 let threshold = 30; // Adjust this value to suit your specific images
 
     
-if (dist(BobaPos.x, BobaPos.y, man.x, man.y) < threshold) {
+if ((dist(BobaPos.x, BobaPos.y, man.x, man.y) < threshold || dist(KetchupPos.x, KetchupPos.y, man.x, man.y) < threshold) && invincible == false) {
     textFont("monospace");
     textSize(40 );
     stroke(0);
     strokeWeight(5);
     isJumping = true;  
-    text("Ooff Try Again", 600  ,400); 
+    text("ooff try again", 600  ,400); 
     AirportAudio.stop();
     Dead.play();
     Dead.setVolume(0.5);
@@ -525,6 +610,17 @@ image(tree_img,
     time += 0.05; // controls speed of cloud bop
     pop();  // restore the drawing style
     
+    
+    if(invincible == true) {
+        
+           stroke(0);
+            strokeWeight(4);
+            textFont("comic sans MS");
+            textSize(20);
+            fill(255,255,255);
+            text("INVINCIBILITY ON", 550,100);  
+    }
+    
 
 }
 
@@ -538,7 +634,17 @@ function keyPressed() {
             man.ySpeed = -20; //Jump is initiate
             Jump.play(); //plays the jump music
             Jump.setVolume(0.1 );  // Set the volume to 50%
-}
+            
+        }
+    
+        else if(keyCode === 121) {
+            invincible = true;
+            console.log("invincibility is on");
+        }
+    
+    else if(keyCode === 82) {
+        location.reload();
+    }
             
         }
             
