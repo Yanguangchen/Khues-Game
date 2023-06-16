@@ -648,7 +648,13 @@ function keyPressed() {
             
         }
             
-	
+function touchStarted() {
+    isJumping = true;
+}
+
+function touchEnded() {
+    isJumping = false;
+}
 
 
 function keyReleased() { //once key release

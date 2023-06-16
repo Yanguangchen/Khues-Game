@@ -48,6 +48,11 @@
               // disable the button
               playButton.disabled = true;
           } 
+          
+          else if (audio.play) {
+              audio.paused();
+              audio.play();
+          }
 
           else {
               audio.currentTime = 0;
