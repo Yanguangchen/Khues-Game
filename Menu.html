@@ -17,7 +17,7 @@
       
 
 <h1>The Path To Freedom</h1>
-<strong><a id="firstlevel" href="Levels/Airport.html"> START</a></strong>
+<strong><a id="firstlevel" href="Levels/LoadAirport.html"> START</a></strong>
       
       
 <div></div>
@@ -30,10 +30,7 @@
 </audio>
       
       
-    <div></div>
-<button id="MenuAudio">Sound On</button>
-<p>Turn on Audio for best experience</p>
-      
+
       
 <script>
     window.onload = function() {
@@ -41,28 +38,7 @@
         
         audio.play();
       
-      function playMusic() {
-          if (audio.paused) {
-              audio.play();
-              audio.loop = true;
-              // disable the button
-              playButton.disabled = true;
-          } 
-          
-          else if (audio.play) {
-              audio.paused();
-              audio.play();
-          }
 
-          else {
-              audio.currentTime = 0;
-          }
-      }
-
-      let playButton = document.getElementById("MenuAudio");
-      playButton.addEventListener("click", playMusic);
-        
-    }
 
 </script>
 
