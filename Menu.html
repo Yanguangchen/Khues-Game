@@ -1,71 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<link rel="icon" href=Resources/"ManStand.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="YG">
-    <link rel="stylesheet" type="text/css" href="Menu.css">
-    <!-------Favicon-------------------------------------------------->  
-    <link rel="icon" href="/Resources/ManStand.png" type="image/x-icon">
+    <link rel="icon" href=Resources/"ManStand.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="YG" />
+    <link rel="stylesheet" type="text/css" href="CSS/Menu.css" />
+    <!-------Favicon-------------------------------------------------->
+    <link rel="icon" href="/Resources/ManStand.png" type="image/x-icon" />
     <title>Path To Freedom</title>
   </head>
-    
-  <body>
-      
-      
 
-<h1>The Path To Freedom</h1>
-<strong><a id="firstlevel" href="Levels/LoadAirport.html"> START</a></strong>
-      
-      
-<div></div>
-<a id="Select" href="LevelSelect.html">SELECT LEVEL</a>
-      
+  <body>
+    <h1>The Path To Freedom</h1>
+    <strong
+      ><a id="firstlevel" href="Level1/Airport.html"> START</a></strong
+    >
+
+    <div></div>
+    <a id="Select" href="LevelSelect.html">SELECT LEVEL</a>
+
     <!------------------------------------ To play the audio --------------------------------------->
 
-<audio autoplay>
-   <source src="Resources/Menu.mp3" type="audio/mp3">
-</audio>
-      
-      
+    <audio autoplay>
+      <source src="Resources/Menu.mp3" type="audio/mp3" />
+    </audio>
 
-      
-<script>
-    window.onload = function() {
-      let audio = new Audio("Resources/Menu.mp3");
-        
-        audio.play();
-      
+    <script>
+      window.onload = function() {
+        let audio = new Audio("Resources/Menu.mp3");
 
+          audio.play();
+      }
+    </script>
 
-</script>
+    <!------------------------------------ To play the audio --------------------------------------->
 
-    <!------------------------------------ To play the audio ---------------------------------------> 
-    
-        <video autoplay muted loop id="Menu Video" class="bg-video">
-        <source src="Resources/Menu%20Video.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
+    <video autoplay muted loop id="Menu Video" class="bg-video">
+      <source src="Resources/Menu%20Video.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
     </video>
 
     <div class="content">
-        <!-- Put your content here -->
+      <!-- Put your content here -->
     </div>
-
-	 
-	  
-            
-     
   </body>
-    
-<footer>
-    <img id="watermark" src="Resources/Bedroom.png">
-    <p>Made by Chen YG</p>
-    <P>Specifically for Ha Khue 2023</P>
-    <a id="Developer" href="LevelSelect.html">Developer Mode</a>
 
-    
-</footer>
-    
+  <footer>
+    <img id="watermark" src="Resources/Bedroom.png" />
+    <p>Made by Chen YG</p>
+    <p>Specifically for Ha Khue 2023</p>
+    <a id="Developer" href="LevelSelect.html">Developer Mode</a>
+  </footer>
 </html>

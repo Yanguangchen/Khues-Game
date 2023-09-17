@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: comic sans MS, monospace, sans-serif;
+}
+
+h1 {
+    font-family: comic sans MS, sans-serif;
+    color: deeppink;
+    font-size: 400%; /* Assuming base font-size to be 16px */
+    padding-bottom: 0.0625%; 
+    margin-bottom: 6.25%;
+}
+
+div {
+    padding-top: 3.125%;
+}
+
+#Select {
+    color: white;
+    font-family: comic sans MS, monospace, sans-serif;
+    text-decoration: none;
+    font-size: 150%; /* Assuming base font-size to be 16px */
+    background: darkgreen;
+    padding-left: 1.25%;
+    padding-right: 1.25%;
+    padding-top: 0.625%;
+    padding-bottom: 0.625%;
+}
+
+p {
+    color: white;
+    font-family: comic sans MS, monospace, sans-serif;
+}
+
+#firstlevel {
+    font-family: comic sans MS, monospace, sans-serif;
+    color: white;
+    background: darkred;
+    text-decoration: none;
+    font-size: 200%;
+    padding-top: 0.625%;
+    padding-bottom: 0.625%;
+    padding-left: 18.75%;
+    padding-right: 18.75%;
+    position: relative;
+    right: 18.75%;
+}
+
+footer {
+    margin-top: 10%;
+    text-align: center;
+}
+
+#watermark {
+    background: gray;
+    margin: 0.625%;
+}
+
+#Developer {
+    color: gray;
+    text-decoration: none;
+    font-family: comic sans MS, arial, monospace, sans-serif;
+    font-size: 0.625%; /* Assuming base font-size to be 16px */
+}
+
+#MenuAudio {
+    background-color: darkblue;
+    color: white;
+    font-size: 8.125%; /* Assuming base font-size to be 16px */
+    text-decoration: none;
+    font-family: comic sans MS, monospace, sans-serif;
+    padding: 0.1875%;
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    /* Style your content container here */
+}

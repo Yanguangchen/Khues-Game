@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><!------------------------------------------------------------------->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <!------------------------------------------------------------------->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Access</title>
-    <link rel="stylesheet" href="index.css">
-  </head><!------------------------------------------------------------------->
-    
-    
-    
-    
-   
-    
-<body><!------------------------------------------------------------------->
-    
+    <link rel="stylesheet" href="CSS/index.css" /></head
+  ><!------------------------------------------------------------------->
+
+  <body>
+    <!------------------------------------------------------------------->
+
     <h1>Password Protection</h1>
     <p>For Khue and Friends Only</p>
-      
+
     <form id="myForm">
-      <input type="password" id="myInput" placeholder="Enter Password Here">
-      <input type="submit" value="Submit">
+      <input type="password" id="myInput" placeholder="Enter Password Here" />
+      <input type="submit" value="Submit" />
     </form>
 
+    <script>
+      //---------------------------------------------------------------------------
 
-    
-<script>//---------------------------------------------------------------------------
-    
-      document.getElementById('myForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
-          
-// This prevents the form from being submitted normally-------------------------
-          
-        var userInput = document.getElementById('myInput').value;
-        if (userInput == "H@1CHAU") {
-          window.location.href = "Menu.html";
-        } else {
-            
-// do nothing or show an error message------------------------------------------
-            
-          alert('Wrong password, please try again');
-        }
-      });
-</script><!------------------------------------------------------------------------->
-    
-    
-    
-    
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-</body><!------------------------------------------------------------------->
+          // This prevents the form from being submitted normally-------------------------
 
+          var userInput = document.getElementById("myInput").value;
+          if (userInput == "H@1CHAU") {
+            window.location.href = "Menu.html";
+          } else {
+            // do nothing or show an error message------------------------------------------
 
-
-
+            alert("Wrong password, please try again");
+          }
+        });
+    </script>
+    <!------------------------------------------------------------------------->
+  </body>
+  <!------------------------------------------------------------------->
 </html>
-
