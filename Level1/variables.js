@@ -21,6 +21,7 @@ var trees_x;
 var red;
 var green;
 var blue;
+var roadspeed = 0;
 
 //------------------Resource Packs-----------------------------//
 function preload() {
@@ -39,5 +40,7 @@ function preload() {
   Tense = loadSound("../Resources/Tense.mp3");
   grass = loadImage("../Resources/grass.png");
   sky = loadImage("../Resources/sky.jpg");
+  car1 = loadImage("../Resources/car1.png");
+  doggo = loadImage("../Resources/doggo.png");
 }
 //-----------------------------------------------------------//

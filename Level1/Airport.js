@@ -22,13 +22,21 @@ function draw() {
 
     bg_x2 = width;
   }
-
-
-  //------------F L O O R  G R A P H I C S-------//
+    
+    //------------F L O O R  G R A P H I C S-------//
 
   strokeWeight(1);
   fill(100);
   rect(0, 602, width, 100);
+  console.log(roadspeed,"ROADSPEED");
+  for(let i = 0; i < 100000; i += 100) { 
+      fill(255);
+      rect(i + roadspeed, 650, 40, 10);
+  }
+    
+      for(let i = 0; i < 1000000; i += 200) { 
+      image(car1, (i * -10) - roadspeed * 0.7, 560, 200,200);
+  }
 
   GUI();
   animation();

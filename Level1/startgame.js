@@ -13,7 +13,7 @@ function startgame() {
 
   man = {
     x: 100,
-    y: 520,
+    y: 700,
     ySpeed: 0,
   };
 
@@ -51,8 +51,8 @@ function startgame() {
   ];
     
     cloud2_x = [
-  { xPos: 200, scale: 1 }, { xPos: 600, scale: 1 }, { xPos: 900, scale: 1 },
-  { xPos: 1300, scale: 1 }, 
+  { xPos: 100, scale: 1 }, { xPos: 600, scale: 1 }, { xPos: 850, scale: 1 },
+  { xPos: 1200, scale: 1 }, 
 ];
     
     

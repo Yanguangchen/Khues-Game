@@ -23,7 +23,7 @@ function GUI() {
     strokeWeight(4);
     textFont("comic sans MS");
     textSize(20);
-    text("Gate closes in " + timeLeft, 1150, 50); // shows the time elsaped
+    text("Gate closes in " + timeLeft, 1250, 50); // shows the time elsaped
   }
 
 }
