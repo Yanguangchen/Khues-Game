@@ -59,6 +59,18 @@ function drawBackground(x) {
   //                                HOUSES                                     |
   //---------------------------------------------------------------------------X
 
+    image(quacky, 70, 300, 339, 344);
+    image(poco, 500, 300 + cloudbop * 0.1, 339, 344);
+    
+    
+    stroke(random(0,255),
+           random(0,255),
+           random(0,255));
+    strokeWeight(random(0,8));
+    line(335,368, 600, 500 );
+
+
+
   HDB = {
     x1: 400,
     y1: 500,
@@ -176,7 +188,6 @@ function drawBackground(x) {
     house.width * house.scale,
     house.height * house.scale
   );
-
     
 
   time += 0.05; // controls speed of cloud bop

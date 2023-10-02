@@ -42,5 +42,8 @@ function preload() {
   sky = loadImage("../Resources/sky.jpg");
   car1 = loadImage("../Resources/car1.png");
   doggo = loadImage("../Resources/doggo.png");
+  car2 = loadImage("../Resources/car2.png");
+  quacky = loadImage("../Resources/quacky.jpg");
+  poco = loadImage("../Resources/poco.jpg");
 }
 //-----------------------------------------------------------//

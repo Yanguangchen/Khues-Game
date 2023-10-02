@@ -17,13 +17,16 @@ function GUI() {
 
   //-------------------------------ELASPED TIME-------------------------------------------X
   else {
-    timeLeft = 179 - seconds;
+    timeLeft = 60 - seconds;
     fill(255, 255, 255);
     stroke(0);
     strokeWeight(4);
     textFont("comic sans MS");
     textSize(20);
-    text("Gate closes in " + timeLeft, 1250, 50); // shows the time elsaped
+    text("Reaching Airport in " + timeLeft, 1200, 50); // shows the time elsaped
   }
-
+ if(seconds == 60) {
+     window.location.href = 'https://www.example.com';
+ }
+    
 }

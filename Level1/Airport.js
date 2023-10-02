@@ -28,6 +28,8 @@ function draw() {
   strokeWeight(1);
   fill(100);
   rect(0, 602, width, 100);
+  animation();
+  obstacles();
   console.log(roadspeed,"ROADSPEED");
   for(let i = 0; i < 100000; i += 100) { 
       fill(255);
@@ -35,12 +37,11 @@ function draw() {
   }
     
       for(let i = 0; i < 1000000; i += 200) { 
-      image(car1, (i * -10) - roadspeed * 0.7, 560, 200,200);
+      image(car2, (i * -10) - roadspeed * 0.2 + (random(0,2)), 520 + (random(0,2)), 190,190);
+      image(car1, (i * -10) - roadspeed * 0.7, 565, 200,200);
   }
 
   GUI();
-  animation();
-
   // Jumping animation-----------------------------------------------
   man.y += man.ySpeed;
 
@@ -62,8 +63,6 @@ function draw() {
     text("Please dont jump too high and break my game - yg", 300, 400);
   }
     
-    obstacles();
-
   //---------------------------COLLISION DETECTION-----------------------------X
 
   let threshold = 30; // Adjust this value to suit your specific images
