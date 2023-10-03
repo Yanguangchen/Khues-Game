@@ -1,5 +1,8 @@
 function obstacles() {
 //---------------------------SPEED PROGRESSION
+    
+    
+    console.log(seconds);
 
   let obstacleGone = false;
 
@@ -22,19 +25,21 @@ function obstacles() {
   }
 
   if (seconds > 27 && seconds < 31) {
+    strokeWeight(4);
+    stroke(0);
+    textFont("comic sans MS");
+    textSize(30);
+    fill(255, 255, 255);
+    text("SPEED CHANGING ", 550, 300);
+    noStroke();
+  } else if (seconds > 50) {
     stroke(0);
     strokeWeight(4);
     textFont("comic sans MS");
     textSize(30);
     fill(255, 255, 255);
-    text("SPEED CHANGING ", 550, 300);
-  } else if (seconds > 57 && seconds < 60) {
-    stroke(0);
-    strokeWeight(4);
-    textFont("comic sans MS");
-    textSize(30);
-    fill(255, 255, 255);
-    text("SPEED CHANGING ", 550, 300);
+    text("Reaching in: " + timeLeft, 550, 300);
+    noStroke();
   }
   //------------------------------------DISAPLY THE OBSTACLES-----------------X
   image(

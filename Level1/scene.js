@@ -60,15 +60,16 @@ function drawBackground(x) {
   //---------------------------------------------------------------------------X
 
     image(quacky, 70, 300, 339, 344);
-    image(poco, 500, 300 + cloudbop * 0.1, 339, 344);
-    
-    
     stroke(random(0,255),
            random(0,255),
            random(0,255));
     strokeWeight(random(0,8));
     line(335,368, 600, 500 );
-
+    image(fire, 420, 300, 400, 400);
+    image(fire, 400, 300, 800, 400);
+    image(fire, 420, 300, 800, 400);
+    image(fire, 350, 250, 800, 400);
+    image(fire, 370, 300, 700, 400);
 
 
   HDB = {

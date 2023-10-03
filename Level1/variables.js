@@ -44,6 +44,8 @@ function preload() {
   doggo = loadImage("../Resources/doggo.png");
   car2 = loadImage("../Resources/car2.png");
   quacky = loadImage("../Resources/quacky.jpg");
-  poco = loadImage("../Resources/poco.jpg");
+  fire = loadImage("../Resources/fire.gif");
+  city = loadSound("../Resources/citySound.mp3");
+  run = loadSound("../Resources/run.mp3");
 }
 //-----------------------------------------------------------//

@@ -27,7 +27,7 @@ function draw() {
 
   strokeWeight(1);
   fill(100);
-  rect(0, 602, width, 100);
+  rect(0, 600, width, 100);
   animation();
   obstacles();
   console.log(roadspeed,"ROADSPEED");
