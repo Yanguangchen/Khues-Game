@@ -13,14 +13,15 @@ var seconds;
 var roadspeed = 0;
 var time = 0
 var planex = 470;
+var yaxis;
 
 function preload() {
     plane = loadImage("../Resources/VJ.png");
     Ketchup = loadImage("../Resources/cat.png");
     Boba = loadImage("../Resources/doggo.png");
+    quack = loadImage("../Resources/quacky.png");
     Dead = loadSound("../Resources/MarioDead.mp3");
     bg = loadSound("../Resources/plane.mp3");
-    ch = loadImage("../Resources/charlotte.png");
 }
     
 function setup() {
@@ -39,7 +40,7 @@ function setup() {
 
   //--------------KETCHUP BOTTLE---------X
   KetchupPos = {
-    x: 1500,
+    x: width,
     y: obstacle.y,
     width: 100,
     height: 100,
@@ -48,7 +49,16 @@ function setup() {
 
   //-------------BOBA TEA---------------X
   BobaPos = {
-    x: 1500 - 500,
+    x: width,
+    y: obstacle.y - random(50, 150),
+    width: 100,
+    height: 100,
+    scale: 0.75,
+  };
+
+ //-------------quacky TEA---------------X
+  quacky = {
+    x: width,
     y: obstacle.y - random(50, 150),
     width: 100,
     height: 100,
@@ -61,33 +71,38 @@ function setup() {
 }
 
 function draw() {
+     yaxis = constrain(mouseY, 0, 650);
+
     
-    red_increase -= 0.01;
-    green_increase -=0.01;
-    blue_increase -= 0.01;
+    red_increase -= 0.05;
+    green_increase -=0.05;
+    blue_increase -= 0.05;
     
     red_increase
     background(25 + red_increase, 125 + green_increase, 255 + blue_increase);
     cloudbop = 8 * sin(frameCount / 30); //for the cloud to rise and fall
     fill(0);
-    ellipse(mouseX, mouseY, 20, 20);
+    ellipse(mouseX, yaxis, 20, 20);
     drawClouds();
     obstacles();
     
   let threshold = 35; // Adjust this value to suit your specific images
     
     
-//    
-//    ellipse(BobaPos.x + 35, BobaPos.y + 40, 40,40);
-//    ellipse(KetchupPos.x + 35, KetchupPos.y + 40, 40,40);
-//    ellipse(planex - 50, mouseY + 70, 40,40);
-//    ellipse(planex - 50, mouseY + 100, 40,40);
-//    ellipse(planex - 110, mouseY + 150, 40,40);
+    console.log("DIST QUACKY)", dist(quacky.x, quacky.y, planex, yaxis));
+    
+    ellipse(BobaPos.x + 35, BobaPos.y + 40, 40,40);
+    ellipse(KetchupPos.x + 35, KetchupPos.y + 40, 40,40);
+    ellipse(planex , yaxis + 70, 40,40);
+    ellipse(planex - 50, yaxis + 70, 40,40);
+    ellipse(planex - 110, yaxis + 70, 40,40);
+    ellipse(quacky.x, quacky.y, 40,40);
 
 if (
-  (dist(BobaPos.x + 35, BobaPos.y + 40, planex - 50, mouseY + 70) < threshold) ||
-  (dist(KetchupPos.x + 35, KetchupPos.y + 200, planex, mouseY + 100) < threshold) ||
-  (dist(KetchupPos.x + 35, KetchupPos.y + 40, planex - 110, mouseY + 70) < threshold)
+  (dist(BobaPos.x + 35, BobaPos.y + 40, planex, yaxis + 70) < threshold) ||
+  (dist(KetchupPos.x + 35, KetchupPos.y + 40, planex - 50, yaxis + 70) < threshold) ||
+  (dist(KetchupPos.x + 35, KetchupPos.y + 40, planex - 110, yaxis + 70) < threshold) ||
+  (dist(quacky.x, quacky.y - 50, planex, yaxis) < threshold)
 ) {
   textFont("monospace");
   textSize(40);
@@ -103,71 +118,6 @@ if (
   //-----------------------------------------------------------------------------X
 }
 
-
-function startgame() {
-  //------------------------CLOUD  SETUP------------------------------------//
-    
-  cloud_x = [
-    { xPos: 200,   scale: 1 },
-    { xPos: 600,   scale: 1 },
-    { xPos: 900,   scale: 1 },
-    { xPos: 1300,  scale: 1 },
-    { xPos: 1600,  scale: 1 },
-    { xPos: 2000,  scale: 1 },
-    { xPos: 2500,  scale: 1 },
-    { xPos: 3000,  scale: 1 },
-    { xPos: 3500,  scale: 1 },
-    { xPos: 4000,  scale: 1 },
-    { xPos: 4500,  scale: 1 },
-    { xPos: 5000,  scale: 1 },
-    { xPos: 5500,  scale: 1 },
-    { xPos: 6000,  scale: 1 },
-    { xPos: 6500,  scale: 1 },
-    { xPos: 7000,  scale: 1 },
-    { xPos: 7500,  scale: 1 },
-    { xPos: 8000,  scale: 1 },
-    { xPos: 8500,  scale: 1 },
-    { xPos: 9000,  scale: 1 },
-    { xPos: 9500,  scale: 1 },
-    { xPos: 10000, scale: 1 },
-    { xPos: 10500, scale: 1 },
-    { xPos: 11000, scale: 1 },
-    { xPos: 11500, scale: 1 },
-    { xPos: 12000, scale: 1 },
-    { xPos: 12500, scale: 1 },
-    { xPos: 13000, scale: 1 },
-    { xPos: 13500, scale: 1 },
-    { xPos: 14500, scale: 1 },
-    { xPos: 15000, scale: 1 },
-    { xPos: 15500, scale: 1 },
-    { xPos: 16000, scale: 1 },
-    { xPos: 16500, scale: 1 },
-    { xPos: 17000, scale: 1 },
-    { xPos: 17500, scale: 1 },
-    { xPos: 18000, scale: 1 },
-    { xPos: 18500, scale: 1 },
-    { xPos: 19000, scale: 1 },
-    { xPos: 19500, scale: 1 },
-  ];
-
-  //For the smaller clouds
-cloud2_x = [
-  { xPos: 200, scale: 1 }, { xPos: 600, scale: 1 }, { xPos: 900, scale: 1 },
-  { xPos: 1300, scale: 1 }, { xPos: 1600, scale: 1 }, { xPos: 2000, scale: 1 },
-  { xPos: 2500, scale: 1 }, { xPos: 3000, scale: 1 }, { xPos: 3500, scale: 1 },
-  { xPos: 4000, scale: 1 }, { xPos: 4500, scale: 1 }, { xPos: 5000, scale: 1 },
-  { xPos: 5500, scale: 1 }, { xPos: 6000, scale: 1 }, { xPos: 6500, scale: 1 },
-  { xPos: 7000, scale: 1 }, { xPos: 7500, scale: 1 }, { xPos: 8000, scale: 1 },
-  { xPos: 8500, scale: 1 }, { xPos: 9000, scale: 1 }, { xPos: 9500, scale: 1 },
-  { xPos: 10000, scale: 1 }, { xPos: 105000, scale: 1 }, { xPos: 11000, scale: 1 },
-  { xPos: 11500, scale: 1 }, { xPos: 12000, scale: 1 }, { xPos: 12500, scale: 1 },
-  { xPos: 13000, scale: 1 }, { xPos: 13500, scale: 1 }, { xPos: 14500, scale: 1 },
-  { xPos: 15000, scale: 1 }, { xPos: 15500, scale: 1 }, { xPos: 16000, scale: 1 },
-  { xPos: 16500, scale: 1 }, { xPos: 17000, scale: 1 }, { xPos: 17500, scale: 1 },
-  { xPos: 18000, scale: 1 }, { xPos: 18500, scale: 1 }, { xPos: 19000, scale: 1 },
-  { xPos: 19500, scale: 1 }
-];
-}
 
 function drawClouds() {
   //-------------------CLOUDS ANIMATIONS----------------------X
@@ -229,9 +179,8 @@ function drawClouds() {
 }
 
 function VJ() 
-{
-    
-    image(ch, 300 , mouseY + cloudbop, 120,213);
+{    
+    image(plane, 300 , yaxis + cloudbop, 192,108);
 }
 
 function obstacles() {
@@ -241,21 +190,51 @@ function obstacles() {
     console.log(seconds);
     let obstacleGone = false;
 
-  if (seconds > 30 && seconds < 60) {
+  if (seconds > 10 && seconds < 30) {
     KetchupPos.x -= 20;
     BobaPos.x -= 20;
-    roadspeed -= 5;
+    quacky.x -= 20;
     console.log("speed is 10");
-  } else if (seconds >= 60 && seconds < 80) {
-    KetchupPos.x -= 8;
-    BobaPos.x -= 8;
-    BobaPos.y + sin(time) * 3;
-    roadspeed -= 5;
-    console.log("speed is 8");
-  } else {
+      
+      
+  } else if (seconds >= 30 && seconds < 50) {
     KetchupPos.x -= 10;
     BobaPos.x -= 10;
-    roadspeed -= 5;
+    quacky.x -= 10
+    BobaPos.y + sin(time) * 3;
+    console.log("speed is 8");
+      
+      
+  } 
+    else if (seconds >= 50 && seconds < 70) {
+    KetchupPos.x -= 20;
+    BobaPos.x -= 20;
+    quacky.x -= 20
+    BobaPos.y + sin(time) * 3;
+    console.log("speed is 8");
+  }
+    
+    
+    else if (seconds >= 70 && seconds < 80) {
+    KetchupPos.x -= 25;
+    BobaPos.x -= 25;
+    quacky.x -= 25
+    BobaPos.y + sin(time) * 3;
+    console.log("speed is 8");
+  }
+    
+    else if (seconds >= 80 && seconds < 100) {
+    KetchupPos.x -= 30;
+    BobaPos.x -= 30;
+    quacky.x -= 30
+    BobaPos.y + sin(time) * 3;
+    console.log("speed is 8");
+  }
+    
+    else {
+    KetchupPos.x -= 10;
+    BobaPos.x -= 10;
+    quacky.x -= 10;
     console.log("speed is 6 stage 1 speed");
   }
 
@@ -267,6 +246,8 @@ function obstacles() {
     fill(255, 255, 255);
     text("SPEED CHANGING ", 550, 300);
     noStroke();
+      
+      
   } else if (seconds > 50) {
     stroke(0);
     strokeWeight(4);
@@ -275,6 +256,8 @@ function obstacles() {
     fill(255, 255, 255);
     noStroke();
   }
+    
+    
   //------------------------------------DISAPLY THE OBSTACLES-----------------X
   image(
     Ketchup,
@@ -291,18 +274,30 @@ function obstacles() {
     BobaPos.width * BobaPos.scale * 1.7,
     BobaPos.height * BobaPos.scale * 1.7
   );
+    
+    image(
+    quack,
+    quacky.x - 30,
+    quacky.y - 40,
+    quacky.width * quacky.scale,
+    quacky.height * quacky.scale
+  );
+    
 
   //---------------------------------RESET POSITION OF OBSTACLES---------------X
 
   if (KetchupPos.x < 1) {
-    obstacleGone = true;
-    KetchupPos.x = 1500;
+    KetchupPos.x = 1500 + 200;
     KetchupPos.y = random(0, 650);
   }
 
   if (BobaPos.x < 1) {
-    obstacleGone = true;
     BobaPos.x = 1500;
-    BobaPos.y = 500 + random(0, 650);
+    BobaPos.y = random(0, 650);
+  }
+    
+    if (quacky.x < 1) {
+    quacky.x = 1500 + 400;
+    quacky.y = random(0, 600);
   }
 }
