@@ -2,11 +2,11 @@ function startgame() {
   invincible = false;
   AirportAudio.play();
   city.play();
-  city.setVolume(0.5);
-  AirportAudio.setVolume(0.5);
+  city.setVolume(0.2);
+  AirportAudio.setVolume(0.8);
   run.play();
   run.loop();
-  run.setVolume(0.5);
+  run.setVolume(0.15);
 
   //CANVAS AND GAME TIME
   createCanvas(1500, 700);
