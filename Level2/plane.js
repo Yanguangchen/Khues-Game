@@ -16,7 +16,7 @@ var planex = 470;
 var yaxis;
 
 function preload() {
-    plane = loadImage("../Resources/VJ.png");
+    planeImg = loadImage("../Resources/VJ.png");
     Ketchup = loadImage("../Resources/Cat.png");
     Boba = loadImage("../Resources/doggo.png");
     quack = loadImage("../Resources/quacky.png");
@@ -94,6 +94,7 @@ function draw() {
     cloudbop = 8 * sin(frameCount / 30); //for the cloud to rise and fall
     fill(0);
     ellipse(mouseX, yaxis, 20, 20);
+    drawStars();
     drawClouds();
     obstacles();
     
@@ -158,6 +159,9 @@ function drawClouds() {
       100
     );
       
+      
+    image(planeImg, 300 , yaxis + cloudbop, 192,108);
+
 	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + increment, 130 + cloudbop, 100, 110);
 
 	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + increment, 100 + cloudbop, 80, 80);
@@ -167,6 +171,16 @@ function drawClouds() {
 	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + increment, 130 + cloudbop, 50, 50);
 
 	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 140 + increment, 130 + cloudbop, 80, 50);
+      
+      
+      
+	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + (increment * 2), 430  + 150+ cloudbop, 100, 110);
+
+	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 30 + (increment * 2), 435 + 150 + cloudbop, 30, 30);
+
+	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 100 + (increment * 2), 430 + 150 + cloudbop, 100, 100);
+
+	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 140 + (increment * 2) , 430 + 150 + cloudbop, 80, 50);
   }
 //----------------SMALLER CLOUD-----------------------------X
     for (var i = 0; i < cloud2_x.length; i++) {
@@ -187,12 +201,46 @@ function drawClouds() {
       ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 20 + increment * 4, 500, 60, 60);
       ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 40 + increment * 4, 500, 40, 40);
       ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 25 + increment * 4, 500, 60, 60);
+        
+      fill(255);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + increment * 3, 300, 50, 50);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 20 + increment * 3, 300, 40, 40);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 40 + increment * 3, 300, 20, 20);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 25 + increment * 3, 300, 40, 40);
+        
+
+      fill(255);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + increment * 6, 600, 50, 50);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 20 + increment * 6, 600, 40, 40);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 40 + increment * 6, 600, 20, 20);
+      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 25 + increment * 6, 600, 40, 40);
     }
     
-    VJ();
 }
 
-function VJ() 
-{    
-    image(plane, 300 , yaxis + cloudbop, 192,108);
+
+function drawStars() {
+  let r = 5;
+
+  fill(235, 231, 0);
+  ellipse(planex - 400, 100, r);
+  ellipse(planex + 400, 150, r);
+  ellipse(planex + 400, 150, r);
+  ellipse(planex + 350, 200, r);
+  ellipse(planex + 430, 350, r);
+  ellipse(planex + 300, 150, r);
+  ellipse(planex + 200, 150, r);
+  ellipse(planex + 250, 200, r);
+  ellipse(planex + 170, 350, r);
+
+  ellipse(planex - 330, 350, r);
+  ellipse(planex - 200, 150, r);
+  ellipse(planex - 100, 150, r);
+  ellipse(planex - 150, 200, r);
+  ellipse(planex - 70, 350, r);
+
+  ellipse(planex - 400, 150, r);
+  ellipse(planex - 500, 200, r);
+  ellipse(planex - 450, 350, r);
 }
+
