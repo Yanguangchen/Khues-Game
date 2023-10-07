@@ -21,7 +21,7 @@ function preload() {
     Ketchup = loadImage("../Resources/Cat.png");
     Boba = loadImage("../Resources/doggo.png");
     quack = loadImage("../Resources/quacky.png");
-    tree = loadImage("../Resources/tree.png");
+    tree = loadImage("../Resources/Tree.png");
     Dead = loadSound("../Resources/MarioDead.mp3");
     bg = loadSound("../Resources/plane.mp3");
     
