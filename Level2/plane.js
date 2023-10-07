@@ -15,6 +15,7 @@ var time = 0
 var planex = 470;
 var yaxis;
 
+
 function preload() {
     planeImg = loadImage("../Resources/VJ.png");
     Ketchup = loadImage("../Resources/Cat.png");
@@ -29,7 +30,7 @@ function preload() {
 function setup() {
 
   //CANVAS AND GAME TIME
-  createCanvas(1500, 700);
+  createCanvas(1300, 700);
     
         bg.play();
 
@@ -215,14 +216,15 @@ function drawClouds() {
       ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 40 + increment * 6, 600, 20, 20);
       ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 25 + increment * 6, 600, 40, 40);
     }
-    
 }
 
 
+let starsup = 0;
+
 function drawStars() {
   let r = 5;
-
-  fill(235, 231, 0);
+    
+  fill(235, 231, 0, starsup);
   ellipse(planex - 400, 100, r);
   ellipse(planex + 400, 150, r);
   ellipse(planex + 400, 150, r);
@@ -242,5 +244,81 @@ function drawStars() {
   ellipse(planex - 400, 150, r);
   ellipse(planex - 500, 200, r);
   ellipse(planex - 450, 350, r);
+    
+
+  ellipse(planex + 700, 150, r);
+  ellipse(planex + 700, 200, r);
+  ellipse(planex + 750, 350, r);
+  ellipse(planex - 700, 250, r);
+  ellipse(planex - 700, 400, r);
+  ellipse(planex - 750, 550, r);
+  ellipse(planex + 700, 600, r);
+  ellipse(planex + 700, 700, r);
+  ellipse(planex + 750, 650, r);
+  ellipse(planex - 700, 665, r);
+  ellipse(planex - 700, 645, r);
+    
+    
+  ellipse(planex + 600, 150, r);
+  ellipse(planex + 600, 200, r);
+  ellipse(planex + 600, 350, r);
+  ellipse(planex - 650, 250, r);
+  ellipse(planex - 650, 400, r);
+  ellipse(planex - 660, 550, r);
+  ellipse(planex + 645, 600, r);
+  ellipse(planex + 680, 700, r);
+  ellipse(planex + 550, 400, r);
+  ellipse(planex - 500, 400, r);
+  ellipse(planex - 545, 645, r);
+    
+    
+  ellipse(planex - 400, 100 + 400, r);
+  ellipse(planex + 400, 150 + 400, r);
+  ellipse(planex + 400, 150 + 400, r);
+  ellipse(planex + 350, 200 + 400, r);
+  ellipse(planex + 430, 350 + 400, r);
+  ellipse(planex + 300, 150 + 400, r);
+  ellipse(planex + 200, 150 + 400, r);
+  ellipse(planex + 250, 200 + 400, r);
+  ellipse(planex + 170, 350 + 400, r);
+
+  ellipse(planex - 330, 350 + 400, r);
+  ellipse(planex - 200, 150 + 400, r);
+  ellipse(planex - 100, 150 + 400, r);
+  ellipse(planex - 150, 200 + 400, r);
+  ellipse(planex - 70, 350 + 400, r);
+
+  ellipse(planex - 400, 150 + 400, r);
+  ellipse(planex - 500, 200 + 400, r);
+  ellipse(planex - 450, 350 + 400, r);
+
+  ellipse(planex + 700, 150 + 400, r);
+  ellipse(planex + 700, 200 + 400, r);
+  ellipse(planex + 750, 350 + 400, r);
+  ellipse(planex - 700, 250 + 400, r);
+  ellipse(planex - 700, 400 + 400, r);
+  ellipse(planex - 750, 550 + 400, r);
+  ellipse(planex + 700, 600 + 400, r);
+  ellipse(planex + 700, 700 + 400, r); // note: this may go outside the canvas if not adjusted
+  ellipse(planex + 750, 650 + 400, r);
+  ellipse(planex - 700, 665 + 400, r);
+  ellipse(planex - 700, 645 + 400, r);
+
+  ellipse(planex + 600, 150 + 400, r);
+  ellipse(planex + 600, 200 + 400, r);
+  ellipse(planex + 600, 350 + 400, r);
+  ellipse(planex - 650, 250 + 400, r);
+  ellipse(planex - 650, 400 + 400, r);
+  ellipse(planex - 660, 550 + 400, r);
+  ellipse(planex + 645, 600 + 400, r);
+  ellipse(planex + 680, 700 + 400, r); // note: this may go outside the canvas if not adjusted
+  ellipse(planex + 550, 400 + 400, r);
+  ellipse(planex - 500, 400 + 400, r);
+  ellipse(planex - 545, 645 + 400, r);
+    
+    
+  if (starsup < 255) {
+        starsup += 0.1; // increment starsup by 1, to gradually make stars visible
+  }
 }
 

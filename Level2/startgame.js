@@ -1,6 +1,10 @@
 function startgame() {
   //------------------------CLOUD  SETUP------------------------------------//
     
+    
+   stars = [];
+   numStars = 500; // You can adjust this number as desired
+    
   cloud_x = [
     { xPos: 200,   scale: 1 },
     { xPos: 600,   scale: 1 },
@@ -61,4 +65,6 @@ cloud2_x = [
   { xPos: 18000, scale: 1 }, { xPos: 18500, scale: 1 }, { xPos: 19000, scale: 1 },
   { xPos: 19500, scale: 1 }
 ];
+    
+    
 }
