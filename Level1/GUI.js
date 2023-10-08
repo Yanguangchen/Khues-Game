@@ -25,6 +25,6 @@ function GUI() {
     text("Reaching Airport in " + timeLeft, 1200, 50); // shows the time elsaped
   }
   if (seconds == 60) {
-    window.location.href = "../Level2/plane.html";
+    window.location.href = "../Level2/loading.html";
   }
 }
