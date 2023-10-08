@@ -41,7 +41,55 @@ function obstacles() {
     treePos.x -= 10;
   }
 
-  if (seconds > 27 && seconds < 31) {
+  if (seconds > 7 && seconds < 10) {
+    strokeWeight(4);
+    stroke(0);
+    textFont("comic sans MS");
+    textSize(30);
+    fill(255, 255, 255);
+    text("SPEED CHANGING ", 550, 300);
+    noStroke();
+  }
+  if (seconds > 27 && seconds < 30) {
+    strokeWeight(4);
+    stroke(0);
+    textFont("comic sans MS");
+    textSize(30);
+    fill(255, 255, 255);
+    text("SPEED CHANGING ", 550, 300);
+    noStroke();
+  }
+
+  if (seconds > 47 && seconds < 50) {
+    strokeWeight(4);
+    stroke(0);
+    textFont("comic sans MS");
+    textSize(30);
+    fill(255, 255, 255);
+    text("SPEED CHANGING ", 550, 300);
+    noStroke();
+  }
+
+  if (seconds > 67 && seconds < 70) {
+    strokeWeight(4);
+    stroke(0);
+    textFont("comic sans MS");
+    textSize(30);
+    fill(255, 255, 255);
+    text("SPEED CHANGING ", 550, 300);
+    noStroke();
+  }
+
+  if (seconds > 77 && seconds < 80) {
+    strokeWeight(4);
+    stroke(0);
+    textFont("comic sans MS");
+    textSize(30);
+    fill(255, 255, 255);
+    text("SPEED CHANGING ", 550, 300);
+    noStroke();
+  }
+  if (seconds > 97 && seconds < 100) {
     strokeWeight(4);
     stroke(0);
     textFont("comic sans MS");
