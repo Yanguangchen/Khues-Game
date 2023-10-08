@@ -1,49 +1,40 @@
 function obstacles() {
-//---------------------------SPEED PROGRESSION
-    
-    seconds = gametime / 1000;
-    console.log(seconds);
-    let obstacleGone = false;
+  //---------------------------SPEED PROGRESSION
+
+  seconds = gametime / 1000;
+  console.log(seconds);
+  let obstacleGone = false;
 
   if (seconds > 10 && seconds < 30) {
     KetchupPos.x -= 15;
     BobaPos.x -= 15;
     quacky.x -= 15;
     treePos.x -= 10;
-      
   } else if (seconds >= 30 && seconds < 50) {
     KetchupPos.x -= 10;
     BobaPos.x -= 10;
-    quacky.x -= 10
+    quacky.x -= 10;
     BobaPos.y + sin(time) * 3;
     treePos.x -= 10;
-  } 
-    else if (seconds >= 50 && seconds < 70) {
+  } else if (seconds >= 50 && seconds < 70) {
     KetchupPos.x -= 20;
     BobaPos.x -= 10;
-    quacky.x -= 15
+    quacky.x -= 15;
     BobaPos.y + sin(time) * 3;
-    treePos.x -= 20
-  }
-    
-    
-    else if (seconds >= 70 && seconds < 80) {
+    treePos.x -= 20;
+  } else if (seconds >= 70 && seconds < 80) {
     KetchupPos.x -= 25;
     BobaPos.x -= 25;
-    quacky.x -= 25
+    quacky.x -= 25;
     BobaPos.y + sin(time) * 3;
     treePos.x -= 10;
-  }
-    
-    else if (seconds >= 80 && seconds < 100) {
+  } else if (seconds >= 80 && seconds < 100) {
     KetchupPos.x -= 30;
     BobaPos.x -= 30;
-    quacky.x -= 30
+    quacky.x -= 30;
     BobaPos.y + sin(time) * 3;
     treePos.x -= 10;
-  }
-    
-    else {
+  } else {
     KetchupPos.x -= 10;
     BobaPos.x -= 10;
     quacky.x -= 10;
@@ -58,8 +49,6 @@ function obstacles() {
     fill(255, 255, 255);
     text("SPEED CHANGING ", 550, 300);
     noStroke();
-      
-      
   } else if (seconds > 50) {
     stroke(0);
     strokeWeight(4);
@@ -68,8 +57,7 @@ function obstacles() {
     fill(255, 255, 255);
     noStroke();
   }
-    
-    
+
   //------------------------------------DISAPLY THE OBSTACLES-----------------X
   image(
     Ketchup,
@@ -86,24 +74,22 @@ function obstacles() {
     BobaPos.width * BobaPos.scale * 1.7,
     BobaPos.height * BobaPos.scale * 1.7
   );
-    
-    image(
+
+  image(
     quack,
     quacky.x - 30,
     quacky.y - 40,
     quacky.width * quacky.scale,
     quacky.height * quacky.scale
   );
-    
-    
-    image(
+
+  image(
     tree,
     treePos.x - 100,
     treePos.y - 100,
     treePos.width * treePos.scale * 2,
     treePos.height * treePos.scale * 2
   );
-    
 
   //---------------------------------RESET POSITION OF OBSTACLES---------------X
 
@@ -116,13 +102,13 @@ function obstacles() {
     BobaPos.x = 1500;
     BobaPos.y = random(0, 650);
   }
-    
-    if (quacky.x < 1) {
+
+  if (quacky.x < 1) {
     quacky.x = 1500 + 400;
     quacky.y = random(0, 600);
   }
-    
-    if (treePos.x < 1) {
+
+  if (treePos.x < 1) {
     treePos.x = 1500 + 400;
     treePos.y = random(0, 600);
   }

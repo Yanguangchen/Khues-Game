@@ -3,20 +3,18 @@ function drawBackground(x) {
   push(); // save the current drawing style          |
   translate(x, 0); // shift everything to the right by x pix  |
   //--------------------------------------------------------------X
- 
 
-    
   background(25, 125, 255);
 
-/*-----------------------------------------------------------------------|
+  /*-----------------------------------------------------------------------|
 |                           C  L  O  U  D  S                             |
 |-----------------------------------------------------------------------*/
-   //-------------------CLOUDS ANIMATIONS----------------------X
+  //-------------------CLOUDS ANIMATIONS----------------------X
 
   for (var i = 0; i < cloud_x.length; i++) {
     gametime = millis();
-              cloudbop = 20 * sin(frameCount / 30); //for the cloud to rise and fall
-      
+    cloudbop = 20 * sin(frameCount / 30); //for the cloud to rise and fall
+
     //----------------CLOUD SKETCH-----------------------------X
 
     noStroke();
@@ -29,48 +27,105 @@ function drawBackground(x) {
       100
     );
 
-	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + increment, 130 + cloudbop * 0.5, 100, 110);
+    ellipse(
+      cloud_x[i].xPos * cloud_x[i].scale - 50 + increment,
+      130 + cloudbop * 0.5,
+      100,
+      110
+    );
 
-	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + increment, 100 + cloudbop * 0.5, 80, 80);
+    ellipse(
+      cloud_x[i].xPos * cloud_x[i].scale - 50 + increment,
+      100 + cloudbop * 0.5,
+      80,
+      80
+    );
 
-	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 100 + increment, 130 + cloudbop * 0.5, 100, 100);
+    ellipse(
+      cloud_x[i].xPos * cloud_x[i].scale - 100 + increment,
+      130 + cloudbop * 0.5,
+      100,
+      100
+    );
 
-	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 50 + increment, 130 + cloudbop * 0.5, 50, 50);
+    ellipse(
+      cloud_x[i].xPos * cloud_x[i].scale - 50 + increment,
+      130 + cloudbop * 0.5,
+      50,
+      50
+    );
 
-	ellipse(cloud_x[i].xPos * cloud_x[i].scale - 140 + increment, 130 + cloudbop * 0.5, 80, 50);
+    ellipse(
+      cloud_x[i].xPos * cloud_x[i].scale - 140 + increment,
+      130 + cloudbop * 0.5,
+      80,
+      50
+    );
   }
 
-//----------------SMALLER CLOUD-----------------------------X
+  //----------------SMALLER CLOUD-----------------------------X
 
-    for (var i = 0; i < cloud2_x.length; i++) {
-      fill(255);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 70, 70 + cloudbop, 50, 50);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 20 + 70, 70 + cloudbop, 40, 40);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 40 + 70, 70 + cloudbop, 20, 20);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 25 + 50, 70 + cloudbop, 40, 40);
+  for (var i = 0; i < cloud2_x.length; i++) {
+    fill(255);
+    ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 70, 70 + cloudbop, 50, 50);
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale - 20 + 70,
+      70 + cloudbop,
+      40,
+      40
+    );
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale - 40 + 70,
+      70 + cloudbop,
+      20,
+      20
+    );
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale + 25 + 50,
+      70 + cloudbop,
+      40,
+      40
+    );
 
-      fill(225);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 100, 200 + cloudbop * 0.8, 70, 70);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 20 + 100, 200 + cloudbop * 0.8, 60, 60);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale - 40 + 100, 200 + cloudbop * 0.8, 40, 40);
-      ellipse(cloud2_x[i].xPos * cloud2_x[i].scale + 25 + 100, 200 + cloudbop * 0.8, 60, 60);
-    }
+    fill(225);
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale + 100,
+      200 + cloudbop * 0.8,
+      70,
+      70
+    );
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale - 20 + 100,
+      200 + cloudbop * 0.8,
+      60,
+      60
+    );
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale - 40 + 100,
+      200 + cloudbop * 0.8,
+      40,
+      40
+    );
+    ellipse(
+      cloud2_x[i].xPos * cloud2_x[i].scale + 25 + 100,
+      200 + cloudbop * 0.8,
+      60,
+      60
+    );
+  }
   //---------------------------------------------------------------------------X
   //                                HOUSES                                     |
   //---------------------------------------------------------------------------X
 
-    image(quacky, 70, 300, 339, 344);
-    stroke(random(0,255),
-           random(0,255),
-           random(0,255));
-    strokeWeight(random(0,8));
-    line(335,368, 600, 500 );
-    image(fire, 420, 300, 400, 400);
-    image(fire, 400, 300, 800, 400);
-    image(fire, 420, 300, 800, 400);
-    image(fire, 350, 250, 800, 400);
-    image(fire, 370, 300, 700, 400);
-
+  image(quacky, 70, 300, 339, 344);
+  stroke(random(0, 255), random(0, 255), random(0, 255));
+  strokeWeight(random(0, 8));
+  line(335, 368, 600, 500);
+  image(fire, 420, 300, 400, 400);
+  image(fire, 400, 300, 800, 400);
+  image(fire, 420, 300, 800, 400);
+  image(fire, 350, 250, 800, 400);
+  image(fire, 370, 300, 700, 400);
 
   HDB = {
     x1: 400,
@@ -111,10 +166,8 @@ function drawBackground(x) {
     HDB.width * HDB.scale,
     HDB.height * HDB.scale
   );
-    
-    
-    
-      image(
+
+  image(
     HDB_image,
     HDB.x1,
     HDB.y1,
@@ -145,7 +198,7 @@ function drawBackground(x) {
     HDB.width * HDB.scale,
     HDB.height * HDB.scale
   );
-    
+
   image(
     HDB_image,
     HDB.x1 + 700,
@@ -161,9 +214,8 @@ function drawBackground(x) {
     x1: 85,
     y1: 417,
   };
-    
 
-  image(MBS, house.x1 + 800, house.y1 + 35, house.width + 20 , house.height);
+  image(MBS, house.x1 + 800, house.y1 + 35, house.width + 20, house.height);
 
   image(
     house_img,
@@ -181,7 +233,6 @@ function drawBackground(x) {
     house.height * house.scale
   );
 
-
   image(
     house_img,
     house.x1 + 1000,
@@ -189,11 +240,10 @@ function drawBackground(x) {
     house.width * house.scale,
     house.height * house.scale
   );
-    
 
   time += 0.05; // controls speed of cloud bop
-        drawGrass();
-        drawTrees();
+  drawGrass();
+  drawTrees();
 
   pop(); // restore the drawing style
 
@@ -205,9 +255,7 @@ function drawBackground(x) {
     fill(255, 255, 255);
     text("INVINCIBILITY ON", 550, 100);
   }
-    
 }
-
 
 function drawGrass() {
   //-------------------------------------TREE------------------------------//

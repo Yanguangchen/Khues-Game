@@ -1,8 +1,7 @@
 function obstacles() {
-//---------------------------SPEED PROGRESSION
-    
-    
-    console.log(seconds);
+  //---------------------------SPEED PROGRESSION
+
+  console.log(seconds);
 
   let obstacleGone = false;
 
@@ -24,9 +23,7 @@ function obstacles() {
     console.log("speed is 6 stage 1 speed");
   }
 
-    
-    
-//------CONSOLE LOGGING--------------//
+  //------CONSOLE LOGGING--------------//
   if (seconds > 27 && seconds < 31) {
     strokeWeight(4);
     stroke(0);
@@ -75,5 +72,3 @@ function obstacles() {
     BobaPos.y = 500 + random(5, 20);
   }
 }
-
-

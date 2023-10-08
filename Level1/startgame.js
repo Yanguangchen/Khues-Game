@@ -22,7 +22,7 @@ function startgame() {
     ySpeed: 0,
   };
 
- //OBSTACLE POSITIONING
+  //OBSTACLE POSITIONING
 
   obstacle = {
     y: random(500, 450),
@@ -45,36 +45,33 @@ function startgame() {
     height: 100,
     scale: 0.75,
   };
-    
-    
+
   //------------------------CLOUD  SETUP------------------------------------//
   cloud_x = [
-    { xPos: 200,   scale: 1},
-    { xPos: 600,   scale: 1 },
-    { xPos: 900,   scale: 1 },
-    { xPos: 1300,  scale: 1 },
+    { xPos: 200, scale: 1 },
+    { xPos: 600, scale: 1 },
+    { xPos: 900, scale: 1 },
+    { xPos: 1300, scale: 1 },
   ];
-    
-    cloud2_x = [
-  { xPos: 100, scale: 1 }, { xPos: 600, scale: 1 }, { xPos: 850, scale: 1 },
-  { xPos: 1200, scale: 1 }, 
-];
-    
-    
-      //------------------------GRASS  SETUP------------------------------------//
+
+  cloud2_x = [
+    { xPos: 100, scale: 1 },
+    { xPos: 600, scale: 1 },
+    { xPos: 850, scale: 1 },
+    { xPos: 1200, scale: 1 },
+  ];
+
+  //------------------------GRASS  SETUP------------------------------------//
   //The flowers on the level
-  grass_x = [
-    80,
-    120, 150, 200, 400, 430, 450, 680
-  ];
+  grass_x = [80, 120, 150, 200, 400, 430, 450, 680];
 
   //Television on the ground because why noy
   grass2_x = [400, 1700, 3300];
 
   //Pipe flower
   grass3_x = [40, 900, 1300];
-    
-    //------------------------TREE  SETUP------------------------------------//
+
+  //------------------------TREE  SETUP------------------------------------//
 
   trees_x = [
     { xPos: 50, scale: 0.4 },

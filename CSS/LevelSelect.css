@@ -1,6 +1,14 @@
 body {
     background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 
 #title {
     color: white;
@@ -8,19 +16,41 @@ body {
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-seriF;
     text-decoration: italic;
     text-align: center;
+}
 
+#title h1 {
+    margin-top: 0;  /* Reset margin-top */
 }
 
 .containers {
+    padding: 3%;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;;
+    column-gap: 3%;
 }
-
 
 .container1,
 .container2 {
-    
     text-align: center;
     background: white;
-    
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-seriF;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+.container1 p,
+.container2 p {
+    color: black;
+}
+
+.container1 img,
+.container2 img {
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+}
+
+a {
+    text-decoration: none;
 }

@@ -16,7 +16,7 @@ var elaspedTime;
 var cloud_x;
 var increment = 1;
 var cloudbop;
-var floorPos_y = 600 ;
+var floorPos_y = 600;
 var trees_x;
 var red;
 var green;

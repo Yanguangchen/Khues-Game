@@ -1,44 +1,45 @@
 function setup() {
-    startgame();
+  startgame();
 }
-
-
 
 function draw() {
   background(0);
-  red =+ 1;
-  drawBackground(red,bg_x1);
+  red = +1;
+  drawBackground(red, bg_x1);
   drawBackground(bg_x2);
-  bg_x1 -= 2; //bg value gets decremented                                                
-  bg_x2 -= 2;                                                                         
+  bg_x1 -= 2; //bg value gets decremented
+  bg_x2 -= 2;
 
-  
   if (bg_x1 < -width) {
-    
-    bg_x1 = width; 
-  } 
+    bg_x1 = width;
+  }
 
   if (bg_x2 < -width) {
-
     bg_x2 = width;
   }
-    
-    //------------F L O O R  G R A P H I C S-------//
+
+  //------------F L O O R  G R A P H I C S-------//
 
   strokeWeight(1);
   fill(100);
   rect(0, 600, width, 100);
   animation();
   obstacles();
-  console.log(roadspeed,"ROADSPEED");
-  for(let i = 0; i < 100000; i += 100) { 
-      fill(255);
-      rect(i + roadspeed, 650, 40, 10);
+  console.log(roadspeed, "ROADSPEED");
+  for (let i = 0; i < 100000; i += 100) {
+    fill(255);
+    rect(i + roadspeed, 650, 40, 10);
   }
-    
-      for(let i = 0; i < 1000000; i += 200) { 
-      image(car2, (i * -10) - roadspeed * 0.2 + (random(0,2)), 520 + (random(0,2)), 190,190);
-      image(car1, (i * -10) - roadspeed * 0.7, 565, 200,200);
+
+  for (let i = 0; i < 1000000; i += 200) {
+    image(
+      car2,
+      i * -10 - roadspeed * 0.2 + random(0, 2),
+      520 + random(0, 2),
+      190,
+      190
+    );
+    image(car1, i * -10 - roadspeed * 0.7, 565, 200, 200);
   }
 
   GUI();
@@ -62,7 +63,7 @@ function draw() {
     strokeWeight(2);
     text("Please dont jump too high and break my game - yg", 300, 400);
   }
-    
+
   //---------------------------COLLISION DETECTION-----------------------------X
 
   let threshold = 30; // Adjust this value to suit your specific images
