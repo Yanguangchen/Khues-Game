@@ -167,7 +167,7 @@ function draw() {
   //-----------------------------------------------------------------------------X
 
   if (seconds >= 120) {
-    window.location.href = "https://github.com/Yanguangchen/Khues-Game";
+    window.location.href = "../Level3/loading3.html";
   }
 }
 

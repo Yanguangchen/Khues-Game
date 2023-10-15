@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Path to Freedom</title>
+    <link rel="icon" href="../Resources/ManStand.png" type="image/x-icon" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("playButton").addEventListener("click", function() {
+                var video = document.getElementById("myVideo");
+                video.style.display = "block";
+                video.play();
+            });
+        });
+    </script>
+    
+
+    <style>
+      body {
+        background: black;
+      }
+
+      h1 {
+        background: green;
+        text-align: center;
+        padding: 1%;
+        color: white;
+        font-family: comic sans ms;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #playButton {
+        font-family: comic sans ms;
+        font-size: 150%;
+        background: blue;
+        color: white;
+        width: 50%;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- This is the button that will trigger the video to appear and play -->
+    <button id="playButton">Play final Cutscene</button>
+
+    <!-- Initially set the video to be hidden using inline style or CSS -->
+    <video
+      id="myVideo"
+      width="90%"
+      height="auto"
+      controls
+      style="display: none"
+    >
+      <source src="../Resource2/Ends.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div>
+      <a href="index.html">
+        <h1>click here for the bonus level</h1>
+      </a>
+    </div>
+  </body>
+</html>
