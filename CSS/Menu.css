@@ -30,6 +30,7 @@ div {
     padding-right: 1.25%;
     padding-top: 0.625%;
     padding-bottom: 0.625%;
+    margin-top: 3%
 }
 
 p {
@@ -90,4 +91,13 @@ footer {
     position: relative;
     z-index: 1;
     /* Style your content container here */
+}
+
+#playButton {
+    margin-top: 3%;
+    font-family: comic sans ms;
+    background: blue;
+    color: white;
+    padding: 0.5%;
+    font-size: 120%
 }
