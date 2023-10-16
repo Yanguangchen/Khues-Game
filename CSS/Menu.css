@@ -65,7 +65,7 @@ footer {
     color: gray;
     text-decoration: none;
     font-family: comic sans MS, arial, monospace, sans-serif;
-    font-size: 0.625%; /* Assuming base font-size to be 16px */
+    font-size: 100%;
 }
 
 #MenuAudio {
