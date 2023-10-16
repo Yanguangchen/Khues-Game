@@ -16,21 +16,28 @@
     <h1>The Path To Freedom</h1>
     <strong><a id="firstlevel" href="Level1/loading.html"> START</a></strong>
 
-    <div></div>
     <a id="Select" href="LevelSelect.html">SELECT LEVEL</a>
+      
 
     <!------------------------------------ To play the audio --------------------------------------->
 
-    <audio autoplay>
-      <source src="Resources/Menu.mp3" type="audio/mp3" />
-    </audio>
+
+<!-- Your audio element (without autoplay and loop for now) -->
+<button id="playButton">Turn on Audio</button>
+
+<audio id="myAudio">
+  <source src="Resources/Menu.mp3" type="audio/mp3" />
+</audio>
 
     <script>
-      window.onload = function () {
-        let audio = new Audio("Resources/Menu.mp3");
+window.onload = function () {
+  let audio = document.getElementById("myAudio");
+  let playButton = document.getElementById("playButton");
 
-        audio.play();
-      };
+  playButton.addEventListener("click", function() {
+    audio.play();
+  });
+};
     </script>
 
     <!------------------------------------ To play the audio --------------------------------------->
